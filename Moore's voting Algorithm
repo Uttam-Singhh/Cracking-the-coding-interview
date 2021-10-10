@@ -1,0 +1,16 @@
+def solve(a):
+    count=1
+    i=0
+    for x in range(1,len(a)):
+        if a[x]==a[i]:
+            count+=1
+        else:
+            count-=1
+        if count==0:
+            i=x
+            count=1
+    if a.count(a[i])>(len(a)//2):
+        return a[i]      
+    else:
+        return False          
+print(solve([1,1,74,3,1,2,2,2,2,2,2]))            
